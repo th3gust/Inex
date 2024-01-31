@@ -2,6 +2,7 @@ import { navigator } from "./scripts/elements.js";
 import { headerCatch, reset} from "./scripts/catchs.js";
 import { despachoDLCP, processoCompleto, solicitacao, autorizacaoProcessual, parecer, autorizacaoMotivada, contrato} from "./scripts/processoCompleto.js";
 import { pageCreator} from "./scripts/creators.js";
+import { listController } from "./scripts/controllers.js";
 
 navigator.addEventListener('click', (e) =>{
     const element = e.target.id
@@ -19,6 +20,11 @@ navigator.addEventListener('click', (e) =>{
         'contrato': [contrato, 'Contrato']
     } 
 
-    pageCreator(element, elements[element][0],elements[element][1] )
-    
+    if (Object.keys(elements).includes(element)){
+        pageCreator(element, elements[element][0],elements[element][1] )
+    }
+
+    listController(e)
+
+    console.log(e)
 })

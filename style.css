@@ -119,3 +119,21 @@ main{
 #submit-btn:hover{
     box-shadow: 1px 1px 1px black;
 }
+
+/* anexos */
+
+.anexo{
+    /* display: none; */
+    font-size: 80%;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.anexo li:hover{
+    list-style: none;
+    border-bottom: 1px solid black;
+}
+
+.hide{
+    display: none;
+}
