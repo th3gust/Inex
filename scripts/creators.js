@@ -25,6 +25,7 @@ export const createInputs = (id, legendText, place) =>{
     const legend = document.createElement('legend')
     const input = document.createElement('input')
 
+    input.required = true
     legend.textContent = legendText
     input.type = 'text'
     input.placeholder = place
