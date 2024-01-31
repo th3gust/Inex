@@ -1,7 +1,7 @@
 import { navigator } from "./scripts/elements.js";
-import { headerCatch } from "./scripts/catchs.js";
-import { processoCompleto } from "./scripts/processoCompleto.js";
-import { createForm,createInputs } from "./scripts/creators.js";
+import { headerCatch, reset} from "./scripts/catchs.js";
+import { despachoDLCP, processoCompleto, solicitacao, autorizacaoProcessual, parecer, autorizacaoMotivada, contrato} from "./scripts/processoCompleto.js";
+import { pageCreator} from "./scripts/creators.js";
 
 navigator.addEventListener('click', (e) =>{
     const element = e.target.id
@@ -9,10 +9,16 @@ navigator.addEventListener('click', (e) =>{
     if (Object.keys(processoCompleto.abertura).length === 0 ){
         headerCatch()
     }
-    
-    if (element === 'solicitacao'){
-        createForm(element, 'Solicitação formal')
-        createInputs('secretaria-solicitante', 'Secretaria solicitante', 'Secretaria Municipal de...')
-    }
+
+    const elements = {
+        'solicitacao': [solicitacao, 'Solicitação formal'],
+        'despacho-dlcp': [despachoDLCP, 'Despacho'],
+        'autorizacao-processual': [autorizacaoProcessual, 'Autorização processual'],
+        'parecer': [parecer, 'Parecer jurídico'],
+        'autorizacao-motivada': [autorizacaoMotivada, 'Autorização motivada'],
+        'contrato': [contrato, 'Contrato']
+    } 
+
+    pageCreator(element, elements[element][0],elements[element][1] )
     
 })
