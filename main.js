@@ -1,23 +1,26 @@
 import { navigator } from "./scripts/elements.js";
 import { headerCatch, reset} from "./scripts/catchs.js";
-import { despachoDLCP, processoCompleto, solicitacao, autorizacaoProcessual, parecer, autorizacaoMotivada, contrato} from "./scripts/processoCompleto.js";
+import * as ato from "./scripts/processoCompleto.js";
 import { pageCreator} from "./scripts/creators.js";
 import { listController } from "./scripts/controllers.js";
 
 navigator.addEventListener('click', (e) =>{
     const element = e.target.id
     
-    if (Object.keys(processoCompleto.abertura).length === 0 ){
+    if (Object.keys(ato.processoCompleto.abertura).length === 0 ){
         headerCatch()
     }
 
     const elements = {
-        'solicitacao': [solicitacao, 'Solicitação formal'],
-        'despacho-dlcp': [despachoDLCP, 'Despacho'],
-        'autorizacao-processual': [autorizacaoProcessual, 'Autorização processual'],
-        'parecer': [parecer, 'Parecer jurídico'],
-        'autorizacao-motivada': [autorizacaoMotivada, 'Autorização motivada'],
-        'contrato': [contrato, 'Contrato']
+        'solicitacao': [ato.solicitacao, 'Solicitação formal'],
+        'despacho-dlcp': [ato.despachoDLCP, 'Despacho'],
+        'autorizacao-processual': [ato.autorizacaoProcessual, 'Autorização processual'],
+        'parecer': [ato.parecer, 'Parecer jurídico'],
+        'autorizacao-motivada': [ato.autorizacaoMotivada, 'Autorização motivada'],
+        'contrato': [ato.contrato, 'Contrato'],
+        'dfd': [ato.dfd, 'Documento de Formalização de Demanda'],
+        'projeto-basico': [ato.projetoBasico, 'Projeto básico'],
+        'pesquisa-pncp': [ato.pesquisaPNCP, 'Pesquisa PNCP']
     } 
 
     if (Object.keys(elements).includes(element)){
@@ -25,6 +28,4 @@ navigator.addEventListener('click', (e) =>{
     }
 
     listController(e)
-
-    console.log(e)
 })

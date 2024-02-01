@@ -53,3 +53,24 @@ export const contrato = [
     ['assinaturas-contrato-testemunha', 'Assinaturas das testemunhas', 'Ambas/Falta alguma']
 
 ]
+
+export const dfd = [
+    ['requisitante-dfd', 'Área requisitante', 'Diretoria de alguma coisa'],
+    ['descricao-dfd', 'Descrição da demanda', 'Descrita corretamente?'],
+    ['etp-dfd', 'Justificativa de ETP', 'Necessidade ou não?'],
+    ['contratos-dfd', 'Formalização de contratos', 'Sim ou não?'],
+    ['justificativa-dfd', 'Justificativa', 'Sim ou não?'],
+    ['data-dfd', 'Data de expedição', '01/01/2024']
+]
+
+export const projetoBasico = [
+    ['objeto-projeto-basico', 'Descrição do objeto', 'Evento xxxx'],
+    ['artista-projeto-basico', 'Atração artística', 'Coisinho de Jesus'],
+    ['data-evento-projeto-basico', 'Data do evento', '01/01/2024'],
+    ['tempo-apresentacao-projeto-basico', 'Tempo de evento', '2h']
+]
+
+export const pesquisaPNCP = [
+    ['data-pesquisa-pncp', 'Data de expedição', '01/01/2024'],
+    ['resultado-pesquisa-pncp', 'Resultado da pesquisa', 'Conseguiu ou não encontrar resultados']
+]

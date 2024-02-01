@@ -134,6 +134,11 @@ main{
     border-bottom: 1px solid black;
 }
 
+.secundario li:hover {
+    border-bottom: none;
+    /* Escolher como definir este */
+}
+
 .hide{
     display: none;
 }
